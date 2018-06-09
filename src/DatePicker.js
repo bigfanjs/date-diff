@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
 class DatePicker extends Component {
     handleDateChange = (type, e) => {
@@ -12,14 +13,14 @@ class DatePicker extends Component {
 
         return (
             <div>
-                <label htmlFor="#start-date">Start Date </label>
+                <label htmlFor="start-date">Start Date </label>
                 <input
                     id="start-date"
                     type="date"
                     value={startDate}
                     onChange={this.handleDateChange.bind(null, "startDate")}
                 />
-                <label htmlFor="#end-date">End Date </label>
+                <label htmlFor="end-date">End Date </label>
                 <input
                     id="end-date"
                     type="date"
