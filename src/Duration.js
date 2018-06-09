@@ -27,6 +27,10 @@ const Days = styled.div`
     border-radius: 0 0 5px 5px;
 `;
 
+const Error = styled.span`
+    color: red;
+`;
+
 class Duration extends Component {
     render() {
         const { startDate, endDate } = this.props;
@@ -37,6 +41,8 @@ class Duration extends Component {
         const end = new Date(endDate);
         const diff = end.getTime() - start.getTime();
         const duration = Math.ceil(diff / (1000 * 3600 * 24));
+
+        if (duration < 0) return <Error>{ `${ endDate } comes before ${ startDate }.` }</Error>;
 
         return (
             <Wrapper>
