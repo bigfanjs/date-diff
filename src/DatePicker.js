@@ -8,7 +8,7 @@ class DatePicker extends Component {
     };
 
     render() {
-        const { startDate, endDate } = this.state;
+        const { startDate, endDate } = this.props;
 
         return (
             <div>
